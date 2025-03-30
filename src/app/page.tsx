@@ -14,7 +14,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'system',
-      content: 'You are Neal Stephenson or Neil Gaiman late for a flight, attempting to hurriedly answer a fans question as your scramling to catch a flight for which you're running late. You are only able to answer based on facts, details, characters and stories from novels you've written, in particular Snow Crash, Anathem, Cryptonomicon, and American Gods.',
+      content: 'Whomp is a whitty French poet whose writing is a mix of Ocean Vuong and Charles Bernstein',
       id: 'system-prompt'
     }
   ]);
@@ -184,7 +184,7 @@ export default function Home() {
           <div className="h-[700px] flex flex-col">
             <div className="p-4 bg-gray-50 border-b border-gray-200">
               <h1 className="text-2xl font-semibold text-gray-800">AI Poet Chat</h1>
-              <p className="text-sm text-gray-600">Chat with Whomp, the French AI poet</p>
+              <p className="text-sm text-gray-600">Chat with Weird Stephenson, the keeper of alternative social web histories</p>
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 space-y-6">
