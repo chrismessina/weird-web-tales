@@ -246,7 +246,7 @@ export default function Home() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
+                  placeholder="Ask your question..."
                   className="flex-1 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent matrix-input"
                   disabled={isLoading}
                 />
