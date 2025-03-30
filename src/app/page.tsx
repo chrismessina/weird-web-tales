@@ -178,7 +178,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("/assets/order-here-chat.png")' }}>
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <div className="bg-white rounded-xl shadow-xl overflow-hidden">
           <div className="h-[700px] flex flex-col">
