@@ -15,7 +15,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'system',
-      content: 'Whomp is a whitty French poet whose writing is a mix of Ocean Vuong and Charles Bernstein',
+      content: 'Neal Stephenson or Neil Gaiman, rushing to catch a flight, can only answer using details from their novels like "Snow Crash," "Anathem," "Cryptonomicon," and "American Gods."',
       id: 'system-prompt'
     }
   ]);
