@@ -1,0 +1,74 @@
+/* Matrix Theme Styles */
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@600&family=Cutive+Mono&display=swap');
+
+/* Matrix Assistant Message Styles */
+.matrix-assistant-message {
+  background-color: transparent !important;
+  border: none;
+  font-family: 'Overpass Mono', monospace;
+  color: #00FF00 !important;
+  text-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0, 255, 0, 0.5);
+  text-transform: uppercase;
+}
+
+/* Matrix User Message Styles */
+.matrix-user-message {
+  background-color: transparent !important;
+  border: none;
+  font-family: 'Cutive Mono', monospace;
+  color: #FFFFFF !important;
+  text-shadow: 0 0 5px #FFFFFF, 0 0 10px rgba(100, 180, 255, 0.8);
+  font-size: 1.25rem;
+}
+
+/* Matrix Theme Container */
+.matrix-container {
+  background-color: transparent !important;
+}
+
+/* Matrix Chat Container */
+.matrix-chat-container {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 128, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.2);
+}
+
+/* Matrix Input Area */
+.matrix-input-area {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border-top: 1px solid rgba(0, 128, 0, 0.3) !important;
+}
+
+/* Matrix Input Field */
+.matrix-input {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(0, 128, 0, 0.5) !important;
+  color: #00FF00 !important;
+  font-family: 'Overpass Mono', monospace;
+}
+
+.matrix-input::placeholder {
+  color: rgba(0, 255, 0, 0.5);
+}
+
+/* Matrix Icons */
+.matrix-icon {
+  color: #00FF00 !important;
+  filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.7));
+}
+
+/* Matrix Button */
+.matrix-button {
+  background-color: rgba(0, 40, 0, 0.8) !important;
+  border: 1px solid rgba(0, 128, 0, 0.5) !important;
+}
+
+.matrix-button:hover {
+  background-color: rgba(0, 60, 0, 0.8) !important;
+}
+
+/* Hide Elements */
+.matrix-hidden {
+  display: none !important;
+}
