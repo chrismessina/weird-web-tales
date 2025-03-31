@@ -241,15 +241,16 @@ export default function Home() {
 
       {/* Input area - positioned in the blue area */}
       <div className="matrix-input-area">
-        <form onSubmit={handleSubmit} className="flex items-center space-x-2">
+        <form onSubmit={handleSubmit} className="flex items-center space-x-2 relative">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask your question..."
+                  placeholder=""
                   className="flex-1 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent matrix-input"
                   disabled={isLoading}
                 />
+                {!input && !isLoading && <span className="matrix-cursor absolute left-3"></span>}
                 <button
                   type="button"
                   onClick={isRecording ? stopRecording : startRecording}

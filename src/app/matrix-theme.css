@@ -64,10 +64,28 @@
   border: none !important;
   color: #00FF00 !important;
   font-family: 'Overpass Mono', monospace;
+  caret-color: transparent;
 }
 
 .matrix-input::placeholder {
-  color: rgba(0, 255, 0, 0.5);
+  color: transparent;
+}
+
+/* Matrix Cursor Animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.matrix-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: #00FF00;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  box-shadow: 0 0 5px #00FF00, 0 0 10px rgba(0, 255, 0, 0.5);
+  vertical-align: middle;
 }
 
 /* Messages Container */
