@@ -25,6 +25,7 @@ export default function Home() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -33,6 +34,11 @@ export default function Home() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  useEffect(() => {
+    // Focus the input field when the component mounts
+    inputRef.current?.focus();
+  }, []);
 
   const startRecording = async () => {
     try {
@@ -216,8 +222,8 @@ export default function Home() {
                   {/* Assistant icon hidden */}
                   
                   <div
-                    className={`flex flex-col max-w-[70%] ${
-                      message.role === 'user' ? 'items-end' : 'items-start'
+                    className={`flex flex-col ${
+                      message.role === 'user' ? 'max-w-[70%] items-end' : 'w-full items-start'
                     }`}
                   >
                     <div
@@ -227,18 +233,21 @@ export default function Home() {
                           : 'matrix-assistant-message'
                       }`}
                     >
-                      <p className="whitespace-pre-wrap">{message.content}</p>
+                      {message.role === 'assistant' ? (
+                        <div className="flex items-center justify-between w-full">
+                          <p className="whitespace-pre-wrap flex-grow">{message.content}</p>
+                          <button
+                            onClick={() => speakText(message.content)}
+                            className="ml-3 flex-shrink-0 transition-colors matrix-icon"
+                            aria-label="Text to speech"
+                          >
+                            <Volume2 size={16} />
+                          </button>
+                        </div>
+                      ) : (
+                        <p className="whitespace-pre-wrap">{message.content}</p>
+                      )}
                     </div>
-                    
-                    {message.role === 'assistant' && (
-                      <button
-                        onClick={() => speakText(message.content)}
-                        className="mt-2 transition-colors matrix-icon"
-                        aria-label="Text to speech"
-                      >
-                        <Volume2 size={16} />
-                      </button>
-                    )}
                     
                     {/* Timestamp hidden */}
                   </div>
@@ -270,8 +279,9 @@ export default function Home() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder=""
-                  className="flex-1 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent matrix-input"
+                  className="flex-1 p-3 rounded-lg focus:outline-none matrix-input"
                   disabled={isLoading}
+                  ref={inputRef}
                 />
                 {!input && !isLoading && <span className="matrix-cursor absolute left-3"></span>}
                 <button

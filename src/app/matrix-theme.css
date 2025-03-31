@@ -19,7 +19,7 @@
   font-family: 'Cutive Mono', monospace;
   color: #FFFFFF !important;
   text-shadow: 0 0 5px #FFFFFF, 0 0 10px rgba(100, 180, 255, 0.8);
-  font-size: 1.25rem;
+  font-size: 1rem;
   max-width: 90%;
 }
 
@@ -38,10 +38,10 @@
 .matrix-chat-container {
   background-color: transparent !important;
   position: absolute;
-  width: 24%;
+  width: 25%;
   height: 52%;
   top: 8%;
-  left: 48%;
+  left: 49%;
   transform: translateX(-50%) perspective(1201px) rotateX(-5deg);
   display: flex;
   flex-direction: column;
@@ -79,6 +79,7 @@
 
 .matrix-cursor {
   display: inline-block;
+  border-radius: 1px;
   width: 10px;
   height: 20px;
   background-color: #00FF00;
