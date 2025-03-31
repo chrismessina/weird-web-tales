@@ -31,18 +31,18 @@
   width: 100vw;
   overflow: hidden;
   background-size: 150% !important;
-  background-position: center 40% !important;
+  background-position: 65% 40% !important;
 }
 
 /* Matrix Chat Container */
 .matrix-chat-container {
   background-color: transparent !important;
   position: absolute;
-  width: 35%;
-  height: 40%;
-  top: 36%;
-  left: 50%;
-  transform: translateX(-50%) perspective(1200px) rotateX(10deg);
+  width: 24%;
+  height: 52%;
+  top: 8%;
+  left: 48%;
+  transform: translateX(-50%) perspective(1201px) rotateX(-5deg);
   display: flex;
   flex-direction: column;
 }
@@ -51,10 +51,10 @@
 .matrix-input-area {
   background-color: transparent !important;
   position: absolute;
-  width: 35%;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) perspective(1200px) rotateX(10deg);
+  width: 24%;
+  bottom: 9%;
+  left: 48%;
+  transform: translateX(-50%) perspective(1051px) rotateX(-5deg);
   padding: 10px;
 }
 
