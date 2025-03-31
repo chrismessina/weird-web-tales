@@ -55,11 +55,22 @@ export async function POST(request: Request) {
           input: text,
         });
 
-        const audioBlob = await response.blob();
+        const audioBuffer = await response.arrayBuffer();
+        const audioBlob = new Blob([audioBuffer], { type: 'audio/mpeg' });
         
+        // Validate that we have actual audio content
+        if (audioBlob.size === 0) {
+          console.error('Generated audio blob has zero size');
+          return NextResponse.json(
+            { error: 'Failed to generate audio content' },
+            { status: 500 }
+          );
+        }
+
         return new NextResponse(audioBlob, {
           headers: {
             'Content-Type': 'audio/mpeg',
+            'Content-Length': audioBlob.size.toString(),
           },
         });
       } catch (error: any) {

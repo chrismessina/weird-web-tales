@@ -108,9 +108,32 @@ export default function Home() {
         throw new Error(errorData.error || 'Failed to generate speech');
       }
 
+      // Check content type before processing as audio
+      const contentType = response.headers.get('Content-Type');
+      console.log('Response content type:', contentType);
+      
+      if (!contentType || !contentType.includes('audio/mpeg')) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Invalid response format:', errorData);
+        throw new Error(errorData.error || 'Response was not audio format');
+      }
+      
       const audioBlob = await response.blob();
+      
+      // Check for empty audio blob
+      if (audioBlob.size === 0) {
+        console.error('Empty audio blob received');
+        throw new Error('Empty audio received from API');
+      }
+      
       const audioUrl = URL.createObjectURL(audioBlob);
       const audio = new Audio(audioUrl);
+      
+      // Add error handler for audio playback issues
+      audio.onerror = (e) => {
+        console.error('Error playing audio:', e);
+      };
+      
       audio.play();
     } catch (error: any) {
       console.error('Error generating speech:', error);
