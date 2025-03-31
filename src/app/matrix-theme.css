@@ -32,8 +32,6 @@
   overflow: hidden;
   background-size: 150% !important;
   background-position: 50% 64%!important;
-  transform: scale(1.25);
-  transform-origin: center;
 }
 
 /* Matrix Chat Container */
