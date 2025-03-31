@@ -211,7 +211,7 @@ export default function Home() {
     <div className="matrix-container bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("/assets/order-here-chat.png")' }}>
       {/* Chat messages container - positioned in the green area */}
       <div className="matrix-chat-container">
-        <div className="matrix-messages-container space-y-6">
+        <div className="matrix-messages-container space-y-3">
               {messages.slice(1).map((message) => (
                 <div
                   key={message.id}

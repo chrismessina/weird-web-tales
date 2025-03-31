@@ -31,7 +31,9 @@
   width: 100vw;
   overflow: hidden;
   background-size: 150% !important;
-  background-position: 50% 64%!important
+  background-position: 50% 64%!important;
+  transform: scale(1.25);
+  transform-origin: center;
 }
 
 /* Matrix Chat Container */
@@ -39,8 +41,8 @@
   background-color: transparent !important;
   position: absolute;
   width: 25%;
-  height: 52%;
-  top: 8%;
+  height: 53%;
+  top: 10%;
   left: 49%;
   transform: translateX(-50%) perspective(1201px) rotateX(-5deg);
   display: flex;
