@@ -234,11 +234,11 @@ export default function Home() {
                       }`}
                     >
                       {message.role === 'assistant' ? (
-                        <div className="flex items-center justify-between w-full">
-                          <p className="whitespace-pre-wrap flex-grow">{message.content}</p>
+                        <div className="whitespace-pre-wrap">
+                          {message.content}
                           <button
                             onClick={() => speakText(message.content)}
-                            className="ml-3 flex-shrink-0 transition-colors matrix-icon"
+                            className="inline-flex ml-2 transition-colors matrix-icon align-middle"
                             aria-label="Text to speech"
                           >
                             <Volume2 size={16} />

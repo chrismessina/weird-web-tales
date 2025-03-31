@@ -54,7 +54,7 @@
   width: 24%;
   bottom: 9%;
   left: 48%;
-  transform: translateX(-50%) perspective(1051px) rotateX(-5deg);
+  transform: translateX(-50%) rotateX(10deg) skewY(-2deg);
   padding: 10px;
 }
 
